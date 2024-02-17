@@ -6,18 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace Intro.DataAccess.Concretes;
 
-//Veri tabanı ile çalışan katman
-public class CourseDal : ICourseDal
+public class DapperCourseDal : ICourseDal
 {
     List<Course> courses;
-    public CourseDal()    //new lendiğinde çalışan constructor classı çalışır
+    public DapperCourseDal()    //new lendiğinde çalışan constructor classı çalışır
     {
         Course course1 = new Course();
         course1.Id = 1;
-        course1.Name = "C#";
+        course1.Name = "Ruby";
         course1.Description = ".NET 8 vs...";
         course1.Price = 0;
 
@@ -33,7 +31,7 @@ public class CourseDal : ICourseDal
         course3.Description = "Python 3.12....";
         course3.Price = 20;
 
-        courses = new List<Course> { course1, course2,course3 };
+        courses = new List<Course> { course1, course2, course3 };
     }
     public List<Course> GetAll()
     {
